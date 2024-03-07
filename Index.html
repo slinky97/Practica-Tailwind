@@ -1,16 +1,17 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" class="dark">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Tailwind CSS</title>
     <link rel="stylesheet" href="style.css" />
   </head>
-  <body class="bg-slate-100">
-    <header class="bg-white shadow px-6">
+  <body class="bg-slate-100 dark:bg-gray-800">
+    <header class="bg-white dark:bg-gray-600 shadow px-6">
       <div class="flex justify-between h-16 items-center max-w-6xl mx-auto">
         <button
-          class="text-slate-500 hover:bg-sky-500 hover:text-slate-100 rounded p-1 -ml-1 transition-colors focus:ring-2 focus:ring-slate-200"
+          id="toggleMenuButton"
+          class="text-slate-500 hover:bg-sky-500 hover:text-slate-100 rounded p-1 -ml-1 transition-colors focus:ring-2 focus:ring-slate-200 block md:hidden"
         >
           <svg
             class="w-6 fill-current text-slate-600"
@@ -46,20 +47,24 @@
             </svg>
           </a>
           <div class="space-x-8 ml-8 hidden md:flex">
-            <a href="#" class="px-3 py-2 text-sky-500 font-semibold">Home</a>
             <a
               href="#"
-              class="text-slate-600 px-3 py-2 hover:text-sky-500 transition-colors font-semibold"
+              class="px-3 py-2 text-slate-600 dark:text-white dark:hover:text-sky-500 hover:text-sky-500 focus:text-sky-500 dark:focus:text-sky-500 font-semibold"
+              >Home</a
+            >
+            <a
+              href="#"
+              class="text-slate-600 px-3 py-2 dark:text-white dark:hover:text-sky-500 hover:text-sky-500 focus:text-sky-500 dark:focus:text-sky-500 transition-colors font-semibold"
               >About</a
             >
             <a
               href="#"
-              class="text-slate-600 px-3 py-2 hover:text-sky-500 transition-colors font-semibold"
+              class="text-slate-600 px-3 py-2 dark:text-white dark:hover:text-sky-500 hover:text-sky-500 focus:text-sky-500 dark:focus:text-sky-500 transition-colors font-semibold"
               >Blog</a
             >
             <a
               href="#"
-              class="text-slate-600 px-3 py-2 hover:text-sky-500 transition-colors font-semibold"
+              class="text-slate-600 px-3 py-2 dark:text-white dark:hover:text-sky-500 hover:text-sky-500 focus:text-sky-500 dark:focus:text-sky-500 transition-colors font-semibold"
               >Contact</a
             >
           </div>
@@ -67,10 +72,11 @@
 
         <div class="flex">
           <button
+            id="darkModeButton"
             class="m-4 text-slate-500 hover:text-sky-500 rounded-full transition-colors focus:ring-2 focus:ring-slate-200 ring-offset-1"
           >
             <svg
-              class="w-6 fill-current text-slate-600"
+              class="w-6 fill-current text-slate-600 dark:text-yellow-500"
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
               viewBox="0 0 24 24"
@@ -96,10 +102,13 @@
           </button>
         </div>
       </div>
-      <div class="hidden space-y-1 pb-3 border-t pt-2 md:hidden">
+      <div
+        id="mobileMenu"
+        class="hidden space-y-1 pb-3 border-t pt-2 md:hidden"
+      >
         <a
           href="#"
-          class="bg-sky-500 text-white block px-3 py-2 rounded font-semibold"
+          class="text-slate-600 hover:bg-sky-500 hover:text-white block px-3 py-2 rounded font-semibold"
           >Home</a
         >
         <a
@@ -123,7 +132,9 @@
       <div
         class="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 mx-auto max-w-6xl gap-4 mt-4"
       >
-        <article class="bg-white shadow rounded overflow-hidden flex flex-col">
+        <article
+          class="bg-white dark:bg-gray-400 shadow rounded overflow-hidden flex flex-col"
+        >
           <div class="h-52">
             <img
               class="h-full w-full object-cover object-center"
@@ -137,10 +148,10 @@
             >
               JavaScript
             </h3>
-            <h2 class="text-xl font-semibold">
+            <h2 class="text-xl font-semibold text-slate-800">
               Agregar interactividad a tu sitio web con JS
             </h2>
-            <p class="text-slate-500">
+            <p class="text-slate-500 dark:text-white">
               Lorem ipsum dolor sit amet consectetur adipisicing elit.
               Consequatur, autem atque et quis praesentium eum impedit, dolorem
               cupiditate fugit iusto nostrum molestias?
@@ -153,14 +164,20 @@
               alt="Diego Aguilar"
             />
             <div class="flex flex-col justify-center">
-              <span class="text-sm font-semibold leading-4 text-slate-600">
+              <span
+                class="text-sm font-semibold leading-4 text-slate-600 dark:text-slate-700"
+              >
                 Diego Aguilar
               </span>
-              <span class="text-sm text-slate-500">Feb. 29, 2024</span>
+              <span class="text-sm text-slate-500 dark:text-white"
+                >Feb. 29, 2024</span
+              >
             </div>
           </div>
         </article>
-        <article class="bg-white shadow rounded overflow-hidden flex flex-col">
+        <article
+          class="bg-white dark:bg-gray-400 shadow rounded overflow-hidden flex flex-col"
+        >
           <div class="h-52">
             <img
               class="h-full w-full object-cover object-center"
@@ -174,15 +191,13 @@
             >
               JavaScript
             </h3>
-            <h2 class="text-xl font-semibold">
+            <h2 class="text-xl font-semibold text-slate-800">
               Agregar interactividad a tu sitio web con JS
             </h2>
-            <p class="text-slate-500">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sed
-              commodo quam. Nunc feugiat diam malesuada nisl auctor, a
-              sollicitudin urna vestibulum. Proin dapibus consectetur magna vel
-              porta. Etiam vitae suscipit erat, nec ultrices urna. Suspendisse
-              libero dui, mollis sed vestibulum in, lacinia quis lacus.
+            <p class="text-slate-500 dark:text-white">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit.
+              Consequatur, autem atque et quis praesentium eum impedit, dolorem
+              cupiditate fugit iusto nostrum molestias?
             </p>
           </div>
           <div class="flex space-x-2 p-5">
@@ -192,14 +207,20 @@
               alt="Diego Aguilar"
             />
             <div class="flex flex-col justify-center">
-              <span class="text-sm font-semibold leading-4 text-slate-600">
+              <span
+                class="text-sm font-semibold leading-4 text-slate-600 dark:text-slate-700"
+              >
                 Diego Aguilar
               </span>
-              <span class="text-sm text-slate-500">Feb. 29, 2024</span>
+              <span class="text-sm text-slate-500 dark:text-white"
+                >Feb. 29, 2024</span
+              >
             </div>
           </div>
         </article>
-        <article class="bg-white shadow rounded overflow-hidden flex flex-col">
+        <article
+          class="bg-white dark:bg-gray-400 shadow rounded overflow-hidden flex flex-col"
+        >
           <div class="h-52">
             <img
               class="h-full w-full object-cover object-center"
@@ -213,14 +234,13 @@
             >
               JavaScript
             </h3>
-            <h2 class="text-xl font-semibold">
+            <h2 class="text-xl font-semibold text-slate-800">
               Agregar interactividad a tu sitio web con JS
             </h2>
-            <p class="text-slate-500">
+            <p class="text-slate-500 dark:text-white">
               Lorem ipsum dolor sit amet consectetur adipisicing elit.
               Consequatur, autem atque et quis praesentium eum impedit, dolorem
-              cupiditate fugit iusto nostrum molestias? Deserunt obcaecati, ab
-              ipsa nisi distinctio beatae natus.
+              cupiditate fugit iusto nostrum molestias?
             </p>
           </div>
           <div class="flex space-x-2 p-5">
@@ -230,14 +250,20 @@
               alt="Diego Aguilar"
             />
             <div class="flex flex-col justify-center">
-              <span class="text-sm font-semibold leading-4 text-slate-600">
+              <span
+                class="text-sm font-semibold leading-4 text-slate-600 dark:text-slate-700"
+              >
                 Diego Aguilar
               </span>
-              <span class="text-sm text-slate-500">Feb. 29, 2024</span>
+              <span class="text-sm text-slate-500 dark:text-white"
+                >Feb. 29, 2024</span
+              >
             </div>
           </div>
         </article>
-        <article class="bg-white shadow rounded overflow-hidden flex flex-col">
+        <article
+          class="bg-white dark:bg-gray-400 shadow rounded overflow-hidden flex flex-col"
+        >
           <div class="h-52">
             <img
               class="h-full w-full object-cover object-center"
@@ -251,14 +277,13 @@
             >
               JavaScript
             </h3>
-            <h2 class="text-xl font-semibold">
+            <h2 class="text-xl font-semibold text-slate-800">
               Agregar interactividad a tu sitio web con JS
             </h2>
-            <p class="text-slate-500">
+            <p class="text-slate-500 dark:text-white">
               Lorem ipsum dolor sit amet consectetur adipisicing elit.
               Consequatur, autem atque et quis praesentium eum impedit, dolorem
-              cupiditate fugit iusto nostrum molestias? Deserunt obcaecati, ab
-              ipsa nisi distinctio beatae natus.
+              cupiditate fugit iusto nostrum molestias?
             </p>
           </div>
           <div class="flex space-x-2 p-5">
@@ -268,14 +293,20 @@
               alt="Diego Aguilar"
             />
             <div class="flex flex-col justify-center">
-              <span class="text-sm font-semibold leading-4 text-slate-600">
+              <span
+                class="text-sm font-semibold leading-4 text-slate-600 dark:text-slate-700"
+              >
                 Diego Aguilar
               </span>
-              <span class="text-sm text-slate-500">Feb. 29, 2024</span>
+              <span class="text-sm text-slate-500 dark:text-white"
+                >Feb. 29, 2024</span
+              >
             </div>
           </div>
         </article>
-        <article class="bg-white shadow rounded overflow-hidden flex flex-col">
+        <article
+          class="bg-white dark:bg-gray-400 shadow rounded overflow-hidden flex flex-col"
+        >
           <div class="h-52">
             <img
               class="h-full w-full object-cover object-center"
@@ -284,19 +315,26 @@
             />
           </div>
           <div class="space-y-3 p-5 flex-1">
-            <h3
-              class="text-sm font-semibold text-sky-500 bg-slate-200 rounded-full w-20 pl-2 py-1"
-            >
-              JavaScript
-            </h3>
-            <h2 class="text-xl font-semibold">
+            <div class="flex gap-4">
+              <h3
+                class="text-sm font-semibold text-sky-500 bg-slate-200 rounded-full w-20 pl-2 py-1"
+              >
+                JavaScript
+              </h3>
+              <h3
+                class="text-sm font-semibold text-sky-500 bg-slate-200 rounded-full w-12 pl-2.5 py-1"
+              >
+                Web
+              </h3>
+            </div>
+
+            <h2 class="text-xl font-semibold text-slate-800">
               Agregar interactividad a tu sitio web con JS
             </h2>
-            <p class="text-slate-500">
+            <p class="text-slate-500 dark:text-white">
               Lorem ipsum dolor sit amet consectetur adipisicing elit.
               Consequatur, autem atque et quis praesentium eum impedit, dolorem
-              cupiditate fugit iusto nostrum molestias? Deserunt obcaecati, ab
-              ipsa nisi distinctio beatae natus.
+              cupiditate fugit iusto nostrum molestias?
             </p>
           </div>
           <div class="flex space-x-2 p-5">
@@ -306,14 +344,20 @@
               alt="Diego Aguilar"
             />
             <div class="flex flex-col justify-center">
-              <span class="text-sm font-semibold leading-4 text-slate-600">
+              <span
+                class="text-sm font-semibold leading-4 text-slate-600 dark:text-slate-700"
+              >
                 Diego Aguilar
               </span>
-              <span class="text-sm text-slate-500">Feb. 29, 2024</span>
+              <span class="text-sm text-slate-500 dark:text-white"
+                >Feb. 29, 2024</span
+              >
             </div>
           </div>
         </article>
-        <article class="bg-white shadow rounded overflow-hidden flex flex-col">
+        <article
+          class="bg-white dark:bg-gray-400 shadow rounded overflow-hidden flex flex-col"
+        >
           <div class="h-52">
             <img
               class="h-full w-full object-cover object-center"
@@ -321,20 +365,19 @@
               alt="code"
             />
           </div>
-          <div class="space-y-3 p-5 flex-1">
+          <div class="space-y-3 p-5 flex-6">
             <h3
               class="text-sm font-semibold text-sky-500 bg-slate-200 rounded-full w-20 pl-2 py-1"
             >
               JavaScript
             </h3>
-            <h2 class="text-xl font-semibold">
+            <h2 class="text-xl font-semibold text-slate-800">
               Agregar interactividad a tu sitio web con JS
             </h2>
-            <p class="text-slate-500">
+            <p class="text-slate-500 dark:text-white">
               Lorem ipsum dolor sit amet consectetur adipisicing elit.
               Consequatur, autem atque et quis praesentium eum impedit, dolorem
-              cupiditate fugit iusto nostrum molestias? Deserunt obcaecati, ab
-              ipsa nisi distinctio beatae natus.
+              cupiditate fugit iusto nostrum molestias?
             </p>
           </div>
           <div class="flex space-x-2 p-5">
@@ -344,10 +387,14 @@
               alt="Diego Aguilar"
             />
             <div class="flex flex-col justify-center">
-              <span class="text-sm font-semibold leading-4 text-slate-600">
+              <span
+                class="text-sm font-semibold leading-4 text-slate-600 dark:text-slate-700"
+              >
                 Diego Aguilar
               </span>
-              <span class="text-sm text-slate-500">Feb. 29, 2024</span>
+              <span class="text-sm text-slate-500 dark:text-white"
+                >Feb. 29, 2024</span
+              >
             </div>
           </div>
         </article>
@@ -357,13 +404,13 @@
       <div
         class="flex flex-col items-center space-y-4 md:flex-row md:justify-between xl:max-w-6xl lg:max-w-6xl lg:mx-auto md:space-y-0 mx-4"
       >
-        <div class="text-center text-sm text-slate-600">
+        <div class="text-center text-sm text-slate-600 dark:text-white">
           ® 2024 Slinky All Rights Reserved
         </div>
         <div class="flex space-x-4">
           <a href="">
             <svg
-              class="w-6 fill-current text-slate-600 hover:text-[#1877F2] duration-300"
+              class="w-6 fill-current text-slate-600 dark:text-white hover:text-[#1877F2] dark:hover:text-[#1877F2] duration-300"
               role="img"
               viewBox="0 0 24 24"
               xmlns="http://www.w3.org/2000/svg"
@@ -376,7 +423,7 @@
           </a>
           <a href="">
             <svg
-              class="w-6 fill-current text-slate-600 hover:text-black duration-300"
+              class="w-6 fill-current text-slate-600 dark:text-white dark:hover:text-black hover:text-black duration-300"
               role="img"
               viewBox="0 0 24 24"
               xmlns="http://www.w3.org/2000/svg"
@@ -389,7 +436,7 @@
           </a>
           <a href="">
             <svg
-              class="w-6 fill-current text-slate-600 hover:text-[#E4405F] duration-300"
+              class="w-6 fill-current text-slate-600 dark:text-white dark:hover:text-[#E4405F] hover:text-[#E4405F] duration-300"
               role="img"
               viewBox="0 0 24 24"
               xmlns="http://www.w3.org/2000/svg"
@@ -404,4 +451,5 @@
       </div>
     </footer>
   </body>
+  <script src="script.js"></script>
 </html>
